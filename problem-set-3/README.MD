@@ -1,4 +1,4 @@
-# PS 3 — Inferece for Two Proportions, and Means Under Large and Small Samples
+# PS 3 — Inference for Two Proportions, and Means Under Large and Small Samples
 
 ## Topics covered in the problem set
 
@@ -6,11 +6,12 @@
 - Inference for one population mean.
 - Inference for two population means.
 
-See `problem_set_blueprint.md` for a draft question list and `validate_problemset3_computations.py` for a small numeric check script.
+The web quiz is still a placeholder. `problem_set_blueprint.md` lists twenty
+planned MCQs, and `validate_problemset3_computations.py` offers sanity checks
+for the computational items.
 
 Once the HTML quiz is finalised, create `question_bank.json` via:
 
 ```bash
 python ../../tools/extract_questions.py web_app/index.html question_bank.json
 ```
-

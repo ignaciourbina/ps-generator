@@ -1,4 +1,10 @@
 # Intro to Inference
+
+This set covers confidence intervals and hypothesis testing for a single
+proportion, totalling **21** multiple-choice questions.
+
+Topics include:
+
 - Confidence Intervals: theory.
 - Confidence Intervals 1 proportion.
 - Hypothesis testing: theory.
