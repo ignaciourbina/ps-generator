@@ -5,3 +5,5 @@
 - Hypothesis testing: 1 proportion.
 
 For a full audit of the self-assessment questions, see `../doc/audit_ps1_ps2.md`.
+
+A JSON export of the web app questions is available in `question_bank.json`.
