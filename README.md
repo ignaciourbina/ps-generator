@@ -1,66 +1,41 @@
 # Problem Set Generator
 
-### 1. What the project is for
+`ps-generator` collects weekly problem sets and their companion mini web apps. Each
+`problem-set-N` directory is self-contained so that it can be distributed or
+archived independently. The repository currently focuses on static HTML quizzes
+backed by JSON question banks, with a roadmap toward automated PDF generation.
 
-- **Purpose** – The bread and butter is turning lecture slides into weekly problem sets. Students get a self-check web page, while PDFs act as optional documentation.
-- **Audience** – Students in an introductory probability / data-science course.
-- **Output formats** – A static HTML quiz for immediate feedback. PDF problem sets and solutions serve as complementary documentation.
+## 1 · Purpose
 
----
+* **Audience** – Students in an introductory probability and data analysis course.
+* **Outputs** – A browser-based quiz for immediate feedback and PDFs for offline reference.
 
-### 2. Top-level organisation
+## 2 · Repository Layout
 
-| Folder            | Role                                      | Typical contents (seen or strongly implied)                                                                                                                                               |
-| ----------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **problem-set-1** | One fully-packaged weekly unit            | • `lecture-slides/` – PDFs of that week’s lecture<br>• `web_app/` – a tiny self-assessment site<br>• (usually) `bank/` or `generator/` scripts that build the PDF problem set & solutions |
-| **problem-set-2** | ...                                       | ...                                                                                                                                                                                       |
-| **problem-set-3** | Future units that follow the same pattern | Skeleton scaffolds plus a question blueprint (`problem_set_blueprint.md`) and a validation script                                                                                         |
-| **LICENSE**       | Standard MIT license                      | No code impact                                                                                                                                                                            |
+| Item                  | Description                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------|
+| `problem-set-1/`      | Complete unit with slides, a `question_bank.json`, and a deployed web quiz.           |
+| `problem-set-2/`      | Second full unit following the same structure.                                        |
+| `problem-set-3/`      | In-progress content: blueprint of 20 MCQs and validation utilities.                   |
+| `doc/`                | Internal documentation (`audit_ps1_ps2.md`, `schema.md`).                             |
+| `tools/`              | Helper scripts such as `extract_questions.py`.                                        |
+| `tests/`              | Unit tests ensuring JSON files parse correctly.                                       |
+| `Refactor_Roadmap.md` | Milestone plan for moving from the prototype to a full generator pipeline.           |
+| `LICENSE`             | MIT license covering all source files.                                                |
 
-> **Design pattern** – Each _problem-set-N_ directory is deliberately **self-contained**: you can zip it, hand it to a TA, or deploy just that week’s mini-site without touching the rest of the repo. That keeps semester-to-semester edits local.
+> Every problem-set directory contains its own `web_app/`, `lecture-slides/`,
+> and optional `question_bank.json`. The isolation keeps semester-to-semester
+> updates localised.
 
----
+## 3 · Current Problem Sets
 
-### 3. Repo File Structure
+* **Problem Set 1** – 14 MCQs on basic probability. Slides for week 2 are
+  included under `lecture-slides/`.
+* **Problem Set 2** – 21 MCQs introducing inference for one proportion.
+* **Problem Set 3** – Draft blueprint with computation checks; the web quiz is
+  not yet finalised.
 
-| Path                                                                            | What it is                                                             | Key take-aways                                                                                                                                                                                                                              |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `problem-set-1/lecture-slides/W2 - Lecture 4 - Introduction to Probability.pdf` | 35-ish slide deck that the generator bundles alongside the problem set | Covers sample spaces, events, conditional probability, the Law of Total Probability, Bayes, PMF/PDF, expectation & variance (judging by the file name and the week-2 slot). Students have the “theory” right next to the practice problems. |
-| `problem-set-1/web_app/index.html`                                              | The self-assessment page                                               | Extremely small and Markdown-like – literally starts with “# Probability Self-Assessment” followed by the quiz text. The questions themselves are embedded right in the HTML (no build step) so GitHub Pages can host it instantly.         |
-| `problem-set-1/web_app/style.css`                                               | Minimal CSS to make it presentable                                     | In 300 bytes it sets a modern system font, uses a single **.card** container, and tightens typography. The goal is “looks OK on mobile without frameworks”.                                                                                 |
-| `doc/`                                                                          | Internal documentation                                                 | `audit_ps1_ps2.md` captures an audit of sets 1–2, while `schema.md` defines the JSON question format                                                                                                                                        |
-
-**How the mini-site works**
-
-1. The HTML declares each question as a `<fieldset>` of radio buttons.
-2. A few lines of inline JavaScript (very likely sitting at the bottom of the same file) iterate over chosen answers, compare them to a hard-coded answer key, then inject feedback into the DOM.
-3. The CSS makes the whole thing sit in a centered card so it feels like an “app”, not a raw HTML page.
-
-No build tools, no dependencies – students just open the file.
-
----
-
-### 4. How to extend or maintain
-
-- **Centralise the answer key for each problem set** – Expose it as `answers.json`
-- **Accessibility pass** – Wrap radio groups with `<legend>`s, add ARIA `aria-live="polite"` to the results area for screen-reader friendliness.
-- **Lint CSS** – As the course grows, migrate the ad-hoc CSS to a mini utility class file or Tailwind to avoid style drift.
-- - **Question bank** – YAML/JSON/CSV files with question text, variables, and correct answers.
-- **Jinja/LaTeX templates** – A Python script walks the bank, renders LaTeX, and spits out “Problem Set 1.pdf” and “Solutions 1.pdf”.
-- **Makefile or runner script** – One-liner to rebuild everything when questions change.
-- **Question extraction utility** – Run `tools/extract_questions.py` to export a `question_bank.json` from any `web_app/index.html`.
-
----
-
-### 5. TL;DR cheat sheet
-
-- **Each problem-set directory = one week’s slides + web quiz.**
-- **Lecture slides feed directly into problem sets; PDFs are just a complementary reference.**
-- **No heavyweight stacks – everything is static so it works on GitHub Pages or Canvas.**
-
-### 6. Extracting question banks
-
-Run the helper script to convert an existing web quiz into a JSON question bank:
+Extract a fresh JSON bank from any quiz HTML using:
 
 ```bash
 python tools/extract_questions.py problem-set-N/web_app/index.html \
@@ -69,23 +44,18 @@ python tools/extract_questions.py problem-set-N/web_app/index.html \
 
 Replace `N` with the desired week number.
 
----
+## 4 · Development
 
-### 7. Project status & testing
-
-Two full problem sets are currently published:
-
-- **Problem Set 1** – 14 questions on introductory probability.
-- **Problem Set 2** – 21 questions covering the basics of inference.
-
-Problem Set 3 contains a draft blueprint and validation helpers. Once its web
-quiz is ready you can run the same extraction step to produce
-`question_bank.json`.
-
-Run the test suite to confirm the question banks load correctly:
+Run the unit tests whenever question banks change:
 
 ```bash
 pytest -q
 ```
 
-HTML files can be checked with `tidy` and formatted with `prettier`.
+HTML can be validated with `tidy` and formatted with `prettier` if available.
+
+## 5 · Roadmap
+
+`Refactor_Roadmap.md` describes the planned evolution of the project. Upcoming
+milestones include loading question banks at runtime, generating LaTeX PDFs from
+Jinja templates, and improving accessibility across the web apps.
