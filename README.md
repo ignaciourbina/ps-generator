@@ -2,9 +2,9 @@
 
 ### 1. What the project is for
 
-- **Purpose** – A light-weight pipeline that lets an instructor collect lecture slides, auto-generate weekly problem-sets, and give students a quick self-check web page.
+- **Purpose** – The bread and butter is turning lecture slides into weekly problem sets. Students get a self-check web page, while PDFs act as optional documentation.
 - **Audience** – Students in an introductory probability / data-science course.
-- **Output formats** – PDF (formal problem set and solutions sheet) plus a small, static HTML “quiz” that grades itself client-side.
+- **Output formats** – A static HTML quiz for immediate feedback. PDF problem sets and solutions serve as complementary documentation.
 
 ---
 
@@ -55,7 +55,7 @@ No build tools, no dependencies – students just open the file.
 ### 5. TL;DR cheat sheet
 
 - **Each problem-set directory = one week’s slides + web quiz.**
-- **PDFs give the theory; the web quiz gives immediate feedback.**
+- **Lecture slides feed directly into problem sets; PDFs are just a complementary reference.**
 - **No heavyweight stacks – everything is static so it works on GitHub Pages or Canvas.**
 
 ### 6. Extracting question banks
