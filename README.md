@@ -4,7 +4,7 @@
 
 * **Purpose** – A light-weight pipeline that lets an instructor collect lecture slides, auto-generate weekly problem-sets, and give students a quick self-check web page.
 * **Audience** – Students in an introductory probability / data-science course.
-* **Output formats** – PDF (formal problem set and lecture slides) plus a small, static HTML “quiz” that grades itself client-side.
+* **Output formats** – PDF (formal problem set and solutions sheet) plus a small, static HTML “quiz” that grades itself client-side.
 
 ---
 
