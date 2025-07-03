@@ -8,21 +8,23 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 import json5
+import re
 
 
 def extract_questions(html_path: Path) -> list[dict]:
     """Return the questions array parsed from the given HTML file."""
     text = html_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(text, "html.parser")
-    script = next((s for s in soup.find_all("script") if s.string and "const questions" in s.string), None)
-    if not script:
-        raise ValueError("questions array not found")
-    stext = script.string
-    start = stext.index("const questions")
-    start = stext.index("[", start)
-    end = stext.index("];", start)
-    array_str = stext[start:end + 1]
-    return json5.loads(array_str)
+    pattern = re.compile(r"(?:const|let|var)\s+questions\s*=\s*(\[[\s\S]*?\])\s*;")
+
+    for script in soup.find_all("script"):
+        if not script.string:
+            continue
+        match = pattern.search(script.string)
+        if match:
+            return json5.loads(match.group(1))
+
+    raise ValueError("questions array not found")
 
 
 def main() -> None:
