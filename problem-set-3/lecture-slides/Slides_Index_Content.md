@@ -16,7 +16,7 @@
 8. **Statistic of Interest** – Difference $\hat p_1-\hat p_2$; connection to $p_1-p_2$.
 9. **Review: Expectation & Variance Rules** – Linearity and independence formulas.
 10. **Expectation of $\hat p_1-\hat p_2$** – Unbiased: $E(\hat p_1-\hat p_2)=p_1-p_2$.
-11. **Variance of the Statistic** – $\operatorname{Var}(\hat p_1-\hat p_2)=\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}$.
+11. **Variance of the Statistic** – $Var(\hat p_1-\hat p_2)=\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}$.
 12. **Standard Error (SE)** – $SE=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}$.
 13. **Sampling Distribution** – Approx. normal for large samples: $\hat p_1-\hat p_2\sim N( p_1-p_2, SE^2)$.
 14. **Derivation Recap** – Uses CLT and independence.
