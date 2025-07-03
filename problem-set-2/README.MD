@@ -7,3 +7,8 @@
 For a full audit of the self-assessment questions, see `../doc/audit_ps1_ps2.md`.
 
 A JSON export of the web app questions is available in `question_bank.json`.
+If you modify the HTML, rebuild the JSON with:
+
+```bash
+python ../../tools/extract_questions.py web_app/index.html question_bank.json
+```

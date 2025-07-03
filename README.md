@@ -48,6 +48,7 @@ No build tools, no dependencies – students just open the file.
 * * **Question bank** – YAML/JSON/CSV files with question text, variables, and correct answers.
 * **Jinja/LaTeX templates** – A Python script walks the bank, renders LaTeX, and spits out “Problem Set 1.pdf” and “Solutions 1.pdf”.
 * **Makefile or runner script** – One-liner to rebuild everything when questions change.
+* **Question extraction utility** – Run `tools/extract_questions.py` to export a `question_bank.json` from any `web_app/index.html`.
 
 ---
 
@@ -56,3 +57,13 @@ No build tools, no dependencies – students just open the file.
 * **Each problem-set directory = one week’s slides + web quiz.**
 * **PDFs give the theory; the web quiz gives immediate feedback.**
 * **No heavyweight stacks – everything is static so it works on GitHub Pages or Canvas.**
+
+### 6. Extracting question banks
+
+Run the helper script to convert an existing web quiz into a JSON question bank:
+
+```bash
+python tools/extract_questions.py problem-set-N/web_app/index.html \
+    problem-set-N/question_bank.json
+```
+Replace `N` with the desired week number.
