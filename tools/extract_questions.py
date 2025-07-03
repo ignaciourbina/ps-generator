@@ -3,9 +3,11 @@
 
 The script looks for a JavaScript array assignment like ``const questions = [...]``.
 It parses the array using ``json5`` when available so that single quotes or
-trailing commas are accepted.  If ``json5`` is missing, a minimal fallback tries
-to coerce the snippet to standard JSON before parsing.  All keys present in the
-HTML are preserved in the resulting list of dictionaries.
+trailing commas are accepted.  If ``json5`` is missing, a more robust
+fallback uses Node.js to evaluate the snippet and return valid JSON.  Only if
+Node.js is unavailable do we attempt a very simple transformation to standard
+JSON.  All keys present in the HTML are preserved in the resulting list of
+dictionaries.
 """
 from __future__ import annotations
 
@@ -36,11 +38,30 @@ def extract_questions(html_path: Path) -> list[dict]:
             array_text = match.group(1)
             if json5:
                 return json5.loads(array_text)
-            # fallback: try to coerce to standard JSON
-            safe = re.sub(r"(\w+)\s*:", r'"\1":', array_text)
-            safe = safe.replace("'", '"')
-            safe = re.sub(r",\s*(?=[}\]])", "", safe)
-            return json.loads(safe)
+            try:  # attempt Node.js evaluation for robust parsing
+                import subprocess
+                import tempfile
+                import os
+
+                with tempfile.NamedTemporaryFile('w', delete=False, encoding='utf-8') as tmp:
+                    tmp.write(array_text)
+                    tmp_path = tmp.name
+                node_script = (
+                    "const fs=require('fs');"
+                    "const vm=require('vm');"
+                    "const s=fs.readFileSync(process.argv[1],'utf8');"
+                    "const d=vm.runInNewContext('(' + s + ')');"
+                    "process.stdout.write(JSON.stringify(d));"
+                )
+                result = subprocess.run(['node', '-e', node_script, tmp_path],
+                                       check=True, capture_output=True, text=True)
+                os.unlink(tmp_path)
+                return json.loads(result.stdout)
+            except Exception:
+                # simple transformation as last resort
+                safe = re.sub(r"(\w+)\s*:", r'"\1":', array_text)
+                safe = re.sub(r",\s*(?=[}\]])", "", safe)
+                return json.loads(safe)
 
     raise ValueError("questions array not found")
 
