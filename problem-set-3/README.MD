@@ -8,3 +8,9 @@
 
 See `problem_set_blueprint.md` for a draft question list and `validate_problemset3_computations.py` for a small numeric check script.
 
+Once the HTML quiz is finalised, create `question_bank.json` via:
+
+```bash
+python ../../tools/extract_questions.py web_app/index.html question_bank.json
+```
+
