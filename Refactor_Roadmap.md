@@ -12,9 +12,9 @@ The work is split into four milestones so you can merge early and often.
 
 | Task                         | Detail                                                                        | Deliverable         |
 | ---------------------------- | ----------------------------------------------------------------------------- | ------------------- |
-| Inventory existing HTML quiz | List every question, choices, and correct answer flag                         | Markdown audit note |
+| Inventory existing HTML quiz | List every question, choices, and correct answer flag                         | `doc/audit_ps1_ps2.md` |
 | Decide JSON schema           | `id`, `stem`, `choices:[{text,correct}]`, `explanation`, `tags`, `difficulty` | `doc/schema.md`     |
-| Tag each question            | Concept tags (“CLT”, “paired t”, …) & Bloom level                             | Updated audit note  |
+| Tag each question            | Concept tags (“CLT”, “paired t”, …) & Bloom level                             | Updated `doc/audit_ps1_ps2.md`  |
 
 *Outcome:* shared understanding of scope before touching code.
 
