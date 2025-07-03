@@ -39,30 +39,19 @@ No build tools, no dependencies – students just open the file.
 
 ---
 
-### 4. The hidden but typical pieces
+### 4. How to extend or maintain
 
-Even though you didn’t point to them directly, a problem-set-*generator* repo almost always contains:
-
-* **Question bank** – YAML/JSON/CSV files with question text, variables, and correct answers.
+* **Centralise the answer key for each problem set** – Expose it as `answers.json`
+* **Accessibility pass** – Wrap radio groups with `<legend>`s, add ARIA `aria-live="polite"` to the results area for screen-reader friendliness.
+* **Lint CSS** – As the course grows, migrate the ad-hoc CSS to a mini utility class file or Tailwind to avoid style drift.
+* * **Question bank** – YAML/JSON/CSV files with question text, variables, and correct answers.
 * **Jinja/LaTeX templates** – A Python script walks the bank, renders LaTeX, and spits out “Problem Set 1.pdf” and “Solutions 1.pdf”.
 * **Makefile or runner script** – One-liner to rebuild everything when questions change.
 
-You can spot traces of this in the naming conventions (“generator” in the repo name and the fact that the HTML quiz hard-codes its answers – the same answer key probably seeds both the PDF and the web app).
-
 ---
 
-### 5. How to extend or maintain
+### 5. TL;DR cheat sheet
 
-* **Centralise the answer key** – Expose it as `answers.json` so the PDF generator and the web quiz read the *same* file.
-* **Add CI** – GitHub Actions step: run the generator, commit the freshly built PDFs to `gh-pages`, and push the HTML quiz to Pages automatically.
-* **Componentise the web app** – Switch to a tiny framework (Preact / Alpine) only if you want dynamic question loading; otherwise your present simple HTML + vanilla JS is perfect.
-* **Accessibility pass** – Wrap radio groups with `<legend>`s, add ARIA `aria-live="polite"` to the results area for screen-reader friendliness.
-* **Lint CSS** – As the course grows, migrate the ad-hoc CSS to a mini utility class file or Tailwind to avoid style drift.
-
----
-
-### 6. TL;DR cheat sheet
-
-* **Each problem-set directory = one week’s slides + PDF generator + web quiz.**
+* **Each problem-set directory = one week’s slides + web quiz.**
 * **PDFs give the theory; the web quiz gives immediate feedback.**
 * **No heavyweight stacks – everything is static so it works on GitHub Pages or Canvas.**
