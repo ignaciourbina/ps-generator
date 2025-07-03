@@ -1,4 +1,4 @@
-# Week 5 – Question Blueprint (20 MCQs)
+# Problem Set 3 - Syllabus Week 5 – Question Blueprint (20 MCQs)
 
 Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audience: introductory social‑science students.  Metadata follows the draft JSON schema keys so the bank can be created programmatically.
 
@@ -328,8 +328,8 @@ Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audienc
         "C": "0.333",
         "D": "0.645"
       },
-      "answer": "C",
-      "rationale": "\u0302p = (60+55)/(200+180)=115/380 ≈ 0.303; Wait, recalc: 115/380=0.3026 (closest 0.308)."
+      "answer": "A",
+      "rationale": "\u0302p = (60 + 55) / (200 + 180) = 115 / 380 \u2248 0.303; closest option is 0.308 (choice A)."
     }
     ```
 
@@ -346,10 +346,10 @@ Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audienc
         "A": "[−1.6, 9.6]",
         "B": "[−0.8, 8.8]",
         "C": "[0.8, 7.2]",
-        "D": "[1.6, 6.4]"
+        "D": "[1.4, 6.6]"
       },
       "answer": "D",
-      "rationale": "SE≈1.25, diff=4 → ME≈2.45 ⇒ [1.6,6.4]."
+      "rationale": "SE = \u221a(11^2/120 + 9^2/110) \u2248 1.32; ME = 1.96×1.32 \u2248 2.59; diff = 4 ± 2.59 → [1.41, 6.59] rounded to [1.4, 6.6]."
     }
     ```
 
@@ -386,10 +386,10 @@ Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audienc
         "A": "t=0.89",
         "B": "t=1.67",
         "C": "t=2.67",
-        "D": "t=3.56"
+        "D": "t=3.08"
       },
-      "answer": "C",
-      "rationale": "t=(7.8-7)/(0.9/√12)=2.667."
+      "answer": "D",
+      "rationale": "t = (7.8 - 7) / (0.9 / \u221a12) \u2248 3.08."
     }
     ```
 
@@ -424,12 +424,12 @@ Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audienc
       "stem": "Compute the approximate SE of \u0305X_1-\u0305X_2 for small samples: n1=15, s1=4; n2=12, s2=5.",
       "choices": {
         "A": "1.44",
-        "B": "1.87",
+        "B": "1.77",
         "C": "2.12",
         "D": "2.56"
       },
       "answer": "B",
-      "rationale": "SE = √(4²/15 + 5²/12) ≈ 1.87."
+      "rationale": "SE = \u221a(4^2/15 + 5^2/12) \u2248 1.77."
     }
     ```
 
