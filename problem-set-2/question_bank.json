@@ -1,0 +1,527 @@
+[
+  {
+    "id": 1,
+    "text": "In statistical inference, an estimator is a rule or formula used to estimate a population parameter based on sample data. Which of the following statements <strong>best describes the property of an unbiased estimator</strong>?",
+    "topic_short": "Estimator Properties",
+    "options": [
+      {
+        "text": "The expected value of the estimator equals the true population parameter it estimates.",
+        "value": "a"
+      },
+      {
+        "text": "The estimator has zero variance, regardless of the sample size used.",
+        "value": "b"
+      },
+      {
+        "text": "The estimator always produces the exact value of the population parameter.",
+        "value": "c"
+      },
+      {
+        "text": "The sampling distribution of the estimator is uniformly distributed.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "An estimator is said to be unbiased if, on average across many samples, it hits the true parameter value. This means that the <strong>expected value</strong> of the estimator is equal to the parameter it estimates. Zero variance or perfect accuracy are not required (nor are they typical), and there is no requirement that the sampling distribution be uniform."
+  },
+  {
+    "id": 2,
+    "text": "Two unbiased estimators A and B estimate the same parameter. If Var(A)=4 and Var(B)=5, which estimator is more efficient?",
+    "topic_short": "Estimator Efficiency",
+    "options": [
+      {
+        "text": "Estimator A",
+        "value": "a"
+      },
+      {
+        "text": "Estimator B",
+        "value": "b"
+      },
+      {
+        "text": "Both equally efficient",
+        "value": "c"
+      },
+      {
+        "text": "Cannot determine",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Efficiency compares the variances of unbiased estimators; the one with smaller variance (A) is more efficient."
+  },
+  {
+    "id": 3,
+    "text": "According to the Central Limit Theorem, what is the approximate sampling distribution of the sample mean for large n when sampling from a population with mean \\( \\mu \\) and standard deviation \\( \\sigma \\)?",
+    "topic_short": "Central Limit Theorem",
+    "options": [
+      {
+        "text": "\\( N(\\mu, \\sigma/\\sqrt{n}) \\)",
+        "value": "a"
+      },
+      {
+        "text": "\\( N(0, 1) \\)",
+        "value": "b"
+      },
+      {
+        "text": "\\( N(\\mu, \\sigma ) \\)",
+        "value": "c"
+      },
+      {
+        "text": "Same as the original distribution",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The CLT states that the standardized sample mean approaches a normal distribution with mean \\( \\mu \\) and standard deviation \\( \\sigma/\\sqrt{n} \\)."
+  },
+  {
+    "id": 4,
+    "text": "A random sample of 100 observations has a sample mean of 50 and a sample standard deviation of 10. What is the standard error of the sample mean?",
+    "topic_short": "Standard Error",
+    "options": [
+      {
+        "text": "10",
+        "value": "a"
+      },
+      {
+        "text": "5",
+        "value": "b"
+      },
+      {
+        "text": "1",
+        "value": "c"
+      },
+      {
+        "text": "0.1",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "SE of the mean is \\(  s/\\sqrt{n} = 10/\\sqrt{100} = 1. \\)"
+  },
+  {
+    "id": 5,
+    "text": "Suppose a random sample of 100 observations is taken from a normally distributed population. The sample has a mean of 50 and a sample standard deviation of 10. Based on this information, what is the approximate probability that the sample mean exceeds 52?",
+    "topic_short": "Using the CLT",
+    "options": [
+      {
+        "text": "\\(0.50\\) \u2014 The probability that the mean is greater than its expected value.",
+        "value": "a"
+      },
+      {
+        "text": "\\(0.023\\) \u2014 The upper-tail probability beyond a Z-score of 2.",
+        "value": "b"
+      },
+      {
+        "text": "\\(0.977\\) \u2014 The cumulative probability below a Z-score of 2.",
+        "value": "c"
+      },
+      {
+        "text": "\\(0.10\\) \u2014 A rough approximation based on an informal rule of thumb.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "To find the probability that the sample mean exceeds 52, we use the Central Limit Theorem. The standard error of the mean is \\( SE = \\frac{s}{\\sqrt{n}} = \\frac{10}{\\sqrt{100}} = 1 \\). The Z-score is then \\( Z = \\frac{52 - 50}{1} = 2 \\). Using standard normal tables or a calculator, the probability that \\( Z > 2 \\) is approximately 0.023."
+  },
+  {
+    "id": 6,
+    "text": "A city council is considering a new public transportation policy and commissions a survey to gauge public opinion. Out of 400 randomly selected residents, 120 indicate they support the proposed policy. Based on this sample, what is the <strong>95% confidence interval</strong> for the true proportion of the population that supports the policy?",
+    "topic_short": "Confidence Interval for \\(p\\)",
+    "options": [
+      {
+        "text": "\\([0.30 \\pm 0.05]\\)",
+        "value": "a"
+      },
+      {
+        "text": "\\([0.255, 0.345]\\)",
+        "value": "b"
+      },
+      {
+        "text": "\\([0.230, 0.370]\\)",
+        "value": "c"
+      },
+      {
+        "text": "\\([0.295, 0.305]\\)",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "From the survey, the sample proportion is \\( \\hat{p} = 120/400 = 0.30 \\). The standard error is \\( SE = \\sqrt{\\frac{0.3(0.7)}{400}} \\approx 0.0229 \\). Using a 95% confidence level, the margin of error is \\( ME = 1.96 \\times SE \\approx 0.045 \\). Thus, the 95% confidence interval is \\( 0.30 \\pm 0.045 = [0.255, 0.345] \\). This means we are 95% confident the true proportion of residents who support the policy lies within this range."
+  },
+  {
+    "id": 7,
+    "text": "A national polling organization surveys 1,000 voters to estimate support for a proposed education reform policy. The poll finds that 48% of respondents favor the policy. A policymaker wants to test whether this level of support is significantly different from 50%, the threshold assumed under the status quo. To test \\( H_0: p = 0.50 \\) versus \\( H_a: p \\neq 0.50 \\), what is the value of the Z test statistic based on the sample?",
+    "topic_short": "Hypothesis Test for \\(p\\)",
+    "options": [
+      {
+        "text": "-1.27",
+        "value": "a"
+      },
+      {
+        "text": "1.27",
+        "value": "b"
+      },
+      {
+        "text": "-2.50",
+        "value": "c"
+      },
+      {
+        "text": "0",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The test statistic is calculated using \\( Z = \\frac{\\hat{p} - p_0}{\\sqrt{p_0(1 - p_0)/n}} = \\frac{0.48 - 0.50}{\\sqrt{0.5(0.5)/1000}} \\approx -1.27 \\)."
+  },
+  {
+    "id": 8,
+    "text": "Based on the test statistic from the previous question and using a 5% significance level, what is the appropriate conclusion regarding public support for the education reform policy?",
+    "topic_short": "Hypothesis Test Decision",
+    "options": [
+      {
+        "text": "Reject H0",
+        "value": "a"
+      },
+      {
+        "text": "Fail to reject H0",
+        "value": "b"
+      },
+      {
+        "text": "Insufficient information",
+        "value": "c"
+      },
+      {
+        "text": "Accept H0",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "With \\( Z \\approx -1.27 \\), the test statistic falls within the non-rejection region since \\( |Z| < 1.96 \\). Therefore, we fail to reject the null hypothesis at the \\( \\alpha = 0.05 \\) level. There is not enough evidence to conclude that public support differs from 50%."
+  },
+  {
+    "id": 9,
+    "text": "In a recent community survey, 192 out of 400 respondents said they felt safe walking alone at night in their neighborhood. Based on this sample, which of the following best represents a <strong>95% confidence interval</strong> for the true proportion of residents who feel safe?",
+    "topic_short": "Confidence Interval for One Proportion",
+    "options": [
+      {
+        "text": "\\([0.43, 0.53]\\)",
+        "value": "a"
+      },
+      {
+        "text": "\\([0.48, 0.52]\\)",
+        "value": "b"
+      },
+      {
+        "text": "\\([0.44, 0.56]\\)",
+        "value": "c"
+      },
+      {
+        "text": "\\([0.40, 0.60]\\)",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The sample proportion is \\( \\hat{p} = 192/400 = 0.48 \\). The standard error is \\( \\sqrt{0.48(0.52)/400} \\approx 0.025 \\). Using a 95% confidence level, the margin of error is \\( 1.96 \\times 0.025 \\approx 0.049 \\). The interval is approximately \\( 0.48 \\pm 0.05 = [0.43, 0.53] \\)."
+  },
+  {
+    "id": 10,
+    "text": "If a two-sided hypothesis test for a proportion yields a P-value of 0.03, what can you conclude at \u03b1 = 0.05?",
+    "topic_short": "P-value Interpretation",
+    "options": [
+      {
+        "text": "Reject H0",
+        "value": "a"
+      },
+      {
+        "text": "Fail to reject H0",
+        "value": "b"
+      },
+      {
+        "text": "Need a larger sample",
+        "value": "c"
+      },
+      {
+        "text": "The parameter equals the null value",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Since 0.03 < 0.05, we reject the null hypothesis at the 5% significance level."
+  },
+  {
+    "id": 11,
+    "text": "Which of the following best describes a population parameter?",
+    "topic_short": "Population vs. Sample",
+    "options": [
+      {
+        "text": "A theoretical value describing an entire population",
+        "value": "a"
+      },
+      {
+        "text": "A statistic computed from a sample",
+        "value": "b"
+      },
+      {
+        "text": "A random variable from repeated sampling",
+        "value": "c"
+      },
+      {
+        "text": "The standard error of an estimator",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Population parameters are fixed values describing the whole population, unlike sample-based statistics."
+  },
+  {
+    "id": 12,
+    "text": "In hypothesis testing, what does it mean to reject the null hypothesis at the 5% significance level?",
+    "topic_short": "Hypothesis Testing Logic",
+    "options": [
+      {
+        "text": "There is strong evidence that the null hypothesis is true.",
+        "value": "a"
+      },
+      {
+        "text": "There is sufficient statistical evidence to reject the null hypothesis in favor of the alternative hypothesis.",
+        "value": "b"
+      },
+      {
+        "text": "The probability that the null hypothesis is true is exactly 5%.",
+        "value": "c"
+      },
+      {
+        "text": "The data were collected with a 5% probability of measurement error.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Rejecting the null hypothesis at the 5% significance level means that the observed data are sufficiently inconsistent with what we would expect under the null hypothesis. Specifically, the probability of observing such data (or more extreme) under the assumption that the null is true is less than or equal to 0.05. This provides statistical evidence to support the alternative hypothesis, but it does not prove the alternative is true or that the null is false with certainty."
+  },
+  {
+    "id": 13,
+    "text": "Which statement best describes the concept of the standard error (SE) of an estimator in statistical inference?",
+    "topic_short": "Standard Error vs SD",
+    "options": [
+      {
+        "text": "It measures the spread of the population distribution from which the sample is drawn.",
+        "value": "a"
+      },
+      {
+        "text": "It is the standard deviation of the sampling distribution of the estimator across repeated samples.",
+        "value": "b"
+      },
+      {
+        "text": "It equals the variance of individual observations in the sample.",
+        "value": "c"
+      },
+      {
+        "text": "It remains constant regardless of the sample size.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "The standard error (SE) quantifies how much an estimator (like the sample mean or proportion) would vary from sample to sample due to random sampling variability. It is the standard deviation of the estimator's sampling distribution, and it generally decreases as the sample size increases."
+  },
+  {
+    "id": 14,
+    "text": "Which of the following is NOT a required condition for the Central Limit Theorem (CLT) to apply to the sampling distribution of the sample mean?",
+    "topic_short": "CLT Assumptions",
+    "options": [
+      {
+        "text": "Observations are independent \u2014 outcomes don\u2019t influence one another.",
+        "value": "a"
+      },
+      {
+        "text": "Observations are identically distributed \u2014 all drawn from the same population distribution.",
+        "value": "b"
+      },
+      {
+        "text": "The population probability distribution must be normal.",
+        "value": "c"
+      },
+      {
+        "text": "Sample size is sufficiently large.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "The CLT does **not** require the population to be normally distributed. It guarantees that the sampling distribution of the sample mean becomes approximately normal as the sample size increases, assuming the observations are independent, identically distributed, and have finite variance. Normality of the population is only necessary when sample sizes are small."
+  },
+  {
+    "id": 15,
+    "text": "If \\( X_i \\sim N(\\mu=50, \\sigma^2=25) \\) and \\( n = 46 \\), what is the sampling distribution of \\( \\bar{X} \\) (the sample mean)?",
+    "topic_short": "Sample Mean Distribution",
+    "options": [
+      {
+        "text": "\\( N(50, 25/46) \\)",
+        "value": "a"
+      },
+      {
+        "text": "\\( N(50, 25) \\)",
+        "value": "b"
+      },
+      {
+        "text": "Binomial(50, 46)",
+        "value": "c"
+      },
+      {
+        "text": "Uniform(46, 50)",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Since the original population is normal, the sample mean \\( \\bar{X} \\) is also normally distributed with the same mean (50) and reduced variance \\( \\sigma^2 / n = 25 / 16 \\)."
+  },
+  {
+    "id": 16,
+    "text": "In hypothesis testing, what is the purpose of the rejection region?",
+    "topic_short": "Rejection Region Concept",
+    "options": [
+      {
+        "text": "It defines the range of sample outcomes considered unlikely under the null hypothesis.",
+        "value": "a"
+      },
+      {
+        "text": "It contains the values most consistent with the null hypothesis.",
+        "value": "b"
+      },
+      {
+        "text": "It marks the interval where the alternative hypothesis is accepted as true.",
+        "value": "c"
+      },
+      {
+        "text": "It shows the values of the population parameter we believe are most likely.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The rejection region consists of extreme values of the test statistic that would be unlikely to occur if the null hypothesis were true. If the observed statistic falls in this region, we reject the null hypothesis in favor of the alternative."
+  },
+  {
+    "id": 17,
+    "text": "In a statistical study involving categorical outcomes (e.g., 'yes' or 'no', 'success' or 'failure'), researchers often summarize results using the sample proportion \\(\\hat{p}\\). How is this sample proportion calculated from the data?",
+    "topic_short": "Sample Proportion",
+    "options": [
+      {
+        "text": "Number of successes divided by the sample size",
+        "value": "a"
+      },
+      {
+        "text": "Sample size divided by number of successes",
+        "value": "b"
+      },
+      {
+        "text": "Square root of the number of successes",
+        "value": "c"
+      },
+      {
+        "text": "Number of successes minus failures",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The sample proportion \\(\\hat{p}\\) is calculated by dividing the number of observed successes (e.g., those who answered 'yes' or had a positive outcome) by the total number of observations in the sample. It serves as a point estimate of the true population proportion \\(p\\)."
+  },
+  {
+    "id": 18,
+    "text": "What is the variance of the sample proportion \\(\\hat{p}\\)?",
+    "topic_short": "Variance of p-hat",
+    "options": [
+      {
+        "text": "\\(p(1-p)/n\\)",
+        "value": "a"
+      },
+      {
+        "text": "\\(p/n\\)",
+        "value": "b"
+      },
+      {
+        "text": "\\(p(1-p)\\)",
+        "value": "c"
+      },
+      {
+        "text": "\\(1/n\\)",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "For a binomial sample, \\( Var(\\hat{p}) = p(1-p)/n. \\)"
+  },
+  {
+    "id": 19,
+    "text": "Which Z critical value is used for a 99% confidence interval for a proportion?",
+    "topic_short": "99% Confidence Level",
+    "options": [
+      {
+        "text": "1.645",
+        "value": "a"
+      },
+      {
+        "text": "1.96",
+        "value": "b"
+      },
+      {
+        "text": "2.576",
+        "value": "c"
+      },
+      {
+        "text": "3.29",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "A 99% two-sided interval uses the critical value \\( z_{0.995} \\approx 2.576. \\)"
+  },
+  {
+    "id": 20,
+    "text": "Which of the following best describes a correct interpretation of a 95% confidence interval for \\(p\\)?",
+    "topic_short": "Interpreting CIs",
+    "options": [
+      {
+        "text": "In repeated samples, about 95% of such intervals will contain the true p",
+        "value": "a"
+      },
+      {
+        "text": "There is a 95% chance that p equals the sample proportion",
+        "value": "b"
+      },
+      {
+        "text": "The probability that p is inside this one interval is 95%",
+        "value": "c"
+      },
+      {
+        "text": "95% of future sample proportions will fall inside the interval",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Confidence intervals refer to long-run coverage of the true parameter, not a probability for a single interval."
+  },
+  {
+    "id": 21,
+    "text": "In hypothesis testing, the significance level \\( \\alpha \\) represents:",
+    "topic_short": "Significance Level",
+    "options": [
+      {
+        "text": "The probability of rejecting H0 when it is true",
+        "value": "a"
+      },
+      {
+        "text": "The probability that Ha is true",
+        "value": "b"
+      },
+      {
+        "text": "The probability that the sample data are correct",
+        "value": "c"
+      },
+      {
+        "text": "The P-value of the test",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The significance level is the tolerated Type I error rate for the test."
+  }
+]
