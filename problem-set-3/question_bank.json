@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "text": "In the notation of Lecture\u00a09, what symbol represents the *population* proportion for group\u00a01?",
+    "topic_short": "two-proportions",
+    "options": [
+      {
+        "text": "\u0302p_1 (p-hat-one)",
+        "value": "a"
+      },
+      {
+        "text": "p_1",
+        "value": "b"
+      },
+      {
+        "text": "n_1",
+        "value": "c"
+      },
+      {
+        "text": "\u0394 (Delta)",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Hats denote sample statistics; plain *p* denotes the true population parameter."
+  },
+  {
+    "id": 2,
+    "text": "Why does the difference of two sample proportions \u0302p_1-\u0302p_2 become approximately Normal as both sample sizes grow large?",
+    "topic_short": "CLT",
+    "options": [
+      {
+        "text": "Because each proportion is bounded between 0 and\u00a01.",
+        "value": "a"
+      },
+      {
+        "text": "Because the Central Limit Theorem applies independently to each \u0302p_i, and the sum/difference of Normals is Normal.",
+        "value": "b"
+      },
+      {
+        "text": "Because proportions follow a Student-t distribution for large n.",
+        "value": "c"
+      },
+      {
+        "text": "Because the Law of Large Numbers guarantees exact Normality.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "CLT \u2192 each \u0302p_i ~ Normal; linear combinations of independent Normals remain Normal."
+  },
+  {
+    "id": 3,
+    "text": "Which distribution should you use for inference about a single mean when the sample size is 15 and the population standard deviation is unknown?",
+    "topic_short": "student-t",
+    "options": [
+      {
+        "text": "Standard Normal (Z)",
+        "value": "a"
+      },
+      {
+        "text": "Chi-square",
+        "value": "b"
+      },
+      {
+        "text": "Student-t with 14\u00a0df",
+        "value": "c"
+      },
+      {
+        "text": "F\u2011distribution",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "Small n, unknown \u03c3 \u21d2 t_{n\u20111}."
+  },
+  {
+    "id": 4,
+    "text": "In large\u2011sample tests for two means, what role does the quantity \u0394_0 (Delta\u2011zero) play?",
+    "topic_short": "hypothesis-test",
+    "options": [
+      {
+        "text": "It is the pooled standard deviation.",
+        "value": "a"
+      },
+      {
+        "text": "It is the hypothesised difference between population means under H0.",
+        "value": "b"
+      },
+      {
+        "text": "It is the observed difference between sample means.",
+        "value": "c"
+      },
+      {
+        "text": "It is the margin of error.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Delta\u2011zero encodes the null\u2011hypothesised gap (often 0 but not always)."
+  },
+  {
+    "id": 5,
+    "text": "Which of the following scenarios *best* justifies a paired\u2011sample design rather than two independent samples?",
+    "topic_short": "paired",
+    "options": [
+      {
+        "text": "Comparing voter turnout rates between two different states in the same election year.",
+        "value": "a"
+      },
+      {
+        "text": "Comparing blood pressure of patients before and after taking a new medication.",
+        "value": "b"
+      },
+      {
+        "text": "Comparing average incomes of two unrelated demographic groups.",
+        "value": "c"
+      },
+      {
+        "text": "Comparing graduation rates of two schools in different cities.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Pre/post on same individuals = natural pairing."
+  },
+  {
+    "id": 6,
+    "text": "According to the decision tree on slide\u00a026, pooling variances in a two\u2011sample t\u00a0test is *most* reasonable when:",
+    "topic_short": "variance",
+    "options": [
+      {
+        "text": "Sample sizes are equal and population variances are plausibly equal.",
+        "value": "a"
+      },
+      {
+        "text": "One sample is twice the size of the other but sample SDs match exactly.",
+        "value": "b"
+      },
+      {
+        "text": "Sample variances differ by a factor of\u00a04 but sample sizes are large.",
+        "value": "c"
+      },
+      {
+        "text": "There is any evidence of unequal variances regardless of sample size.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Equal n + equal variance assumption allows pooled\u2011SD estimate."
+  },
+  {
+    "id": 7,
+    "text": "If a 95\u202f% confidence interval for \u03bc_1-\u03bc_2 does *not* contain\u00a00, what does this suggest at the 5\u202f% significance level?",
+    "topic_short": "confidence-interval",
+    "options": [
+      {
+        "text": "Fail to reject the null hypothesis of no difference.",
+        "value": "a"
+      },
+      {
+        "text": "Reject the null hypothesis of no difference.",
+        "value": "b"
+      },
+      {
+        "text": "The sample means are equal.",
+        "value": "c"
+      },
+      {
+        "text": "We need a larger sample to decide.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "CI excluding 0 corresponds to significant result at matching \u03b1."
+  },
+  {
+    "id": 8,
+    "text": "A 95\u202f% CI for the vaccination rate difference was [\u22120.013,\u00a00.113]. Which statement best describes the implication for policymakers?",
+    "topic_short": "CI",
+    "options": [
+      {
+        "text": "There is evidence the vaccination rate is higher in group\u00a01 than group\u00a02.",
+        "value": "a"
+      },
+      {
+        "text": "There is no statistically significant difference at the 5\u202f% level.",
+        "value": "b"
+      },
+      {
+        "text": "Group\u00a02 definitely has a higher vaccination rate.",
+        "value": "c"
+      },
+      {
+        "text": "The true difference is exactly \u22120.013 or 0.113.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Interval crosses 0; difference not significant."
+  },
+  {
+    "id": 9,
+    "text": "A hypothesis test on average sleep hours produced Z\u00a0=\u00a0\u22122.67. Which p\u2011value range is correct for a two\u2011tailed test?",
+    "topic_short": "p-value",
+    "options": [
+      {
+        "text": "p\u00a0>\u00a00.10",
+        "value": "a"
+      },
+      {
+        "text": "0.05\u00a0<\u00a0p\u00a0\u2264\u00a00.10",
+        "value": "b"
+      },
+      {
+        "text": "0.01\u00a0<\u00a0p\u00a0\u2264\u00a00.05",
+        "value": "c"
+      },
+      {
+        "text": "p\u00a0\u2264\u00a00.01",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "|Z|\u22482.67 \u21d2 p \u2248 0.0076 one\u2011tailed, 0.015 two\u2011tailed; falls between 1\u202f% and\u00a05\u202f%."
+  },
+  {
+    "id": 10,
+    "text": "A paired\u2011sample 95\u202f% CI for turnout change after an ID law is [\u22123.7\u00a0pp,\u00a00.1\u00a0pp]. Which is the *best* conclusion?",
+    "topic_short": "paired",
+    "options": [
+      {
+        "text": "Turnout definitely decreased by at least 3.7 percentage points.",
+        "value": "a"
+      },
+      {
+        "text": "Turnout definitely increased by up to 0.1\u00a0pp.",
+        "value": "b"
+      },
+      {
+        "text": "There is no strong evidence of a turnout change.",
+        "value": "c"
+      },
+      {
+        "text": "The law had a significant negative impact on turnout.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "Interval includes 0 \u21d2 cannot conclude change."
+  },
+  {
+    "id": 11,
+    "text": "For large independent samples, the statistic \u0305X_1-\u0305X_2 is approximately Normal. Which assumption is *not* required for this approximation?",
+    "topic_short": "sampling-distribution",
+    "options": [
+      {
+        "text": "Population variances are finite.",
+        "value": "a"
+      },
+      {
+        "text": "Samples are independent.",
+        "value": "b"
+      },
+      {
+        "text": "Population distributions are Normal.",
+        "value": "c"
+      },
+      {
+        "text": "Sample sizes are large.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "c",
+    "explanation": "CLT removes shape requirement; only moments & large n matter."
+  },
+  {
+    "id": 12,
+    "text": "Increasing the confidence level from 90\u202f% to 99\u202f% while keeping n and s fixed will\u2026",
+    "topic_short": "margin-of-error",
+    "options": [
+      {
+        "text": "decrease the margin of error",
+        "value": "a"
+      },
+      {
+        "text": "increase the margin of error",
+        "value": "b"
+      },
+      {
+        "text": "leave the margin of error unchanged",
+        "value": "c"
+      },
+      {
+        "text": "make the CI narrower",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Critical z* grows as confidence \u2191 \u21d2 wider interval."
+  },
+  {
+    "id": 13,
+    "text": "Slide\u00a031 warns about \u2018multiple testing\u2019. Which practice best mitigates inflated Type\u00a0I error in this context?",
+    "topic_short": "multiple-testing",
+    "options": [
+      {
+        "text": "Using two\u2011tailed tests instead of one\u2011tailed tests.",
+        "value": "a"
+      },
+      {
+        "text": "Applying a Bonferroni correction when several hypotheses are tested.",
+        "value": "b"
+      },
+      {
+        "text": "Reporting confidence intervals instead of p\u2011values.",
+        "value": "c"
+      },
+      {
+        "text": "Increasing sample size for each test.",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Bonferroni or similar controls family\u2011wise error."
+  },
+  {
+    "id": 14,
+    "text": "Group\u00a01: n=200, \u0302p_1=0.40; Group\u00a02: n=250, \u0302p_2=0.32.  Compute the standard error of \u0302p_1-\u0302p_2 (rounded to 3\u00a0dp).",
+    "topic_short": "SE",
+    "options": [
+      {
+        "text": "0.043",
+        "value": "a"
+      },
+      {
+        "text": "0.046",
+        "value": "b"
+      },
+      {
+        "text": "0.061",
+        "value": "c"
+      },
+      {
+        "text": "0.073",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "SE = sqrt[p1(1-p1)/n1 + p2(1-p2)/n2] \u2248 0.0455 \u2192 0.046."
+  },
+  {
+    "id": 15,
+    "text": "Two samples yield x1=60 of 200, x2=55 of 180 successes.  Compute the pooled proportion \u0302p used in the z\u00a0test for H0: p1=p2.",
+    "topic_short": "pooled",
+    "options": [
+      {
+        "text": "0.303",
+        "value": "a"
+      },
+      {
+        "text": "0.315",
+        "value": "b"
+      },
+      {
+        "text": "0.333",
+        "value": "c"
+      },
+      {
+        "text": "0.645",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "\u0302p = (60 + 55) / (200 + 180) = 115 / 380 \u2248 0.303; choice A now reflects this rounded value."
+  },
+  {
+    "id": 16,
+    "text": "Sample1: n=120, \u0305x_1=52, s1=11; Sample2: n=110, \u0305x_2=48, s2=9.  Compute the 95\u202f% CI for \u03bc_1-\u03bc_2 (use z\u2011critical 1.96). Which interval is correct?",
+    "topic_short": "CI",
+    "options": [
+      {
+        "text": "[\u22121.6,\u00a09.6]",
+        "value": "a"
+      },
+      {
+        "text": "[\u22120.8,\u00a08.8]",
+        "value": "b"
+      },
+      {
+        "text": "[0.8,\u00a07.2]",
+        "value": "c"
+      },
+      {
+        "text": "[1.4,\u00a06.6]",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "d",
+    "explanation": "SE = \u221a(11^2/120 + 9^2/110) \u2248 1.32; ME = 1.96\u00d71.32 \u2248 2.59; diff = 4 \u00b1 2.59 \u2192 [1.41, 6.59] rounded to [1.4, 6.6]."
+  },
+  {
+    "id": 17,
+    "text": "Commute study: n=100, s=7\u202fmin, 95\u202f% CI.  Compute the margin of error (use z=1.96).",
+    "topic_short": "ME",
+    "options": [
+      {
+        "text": "0.69\u202fmin",
+        "value": "a"
+      },
+      {
+        "text": "1.37\u202fmin",
+        "value": "b"
+      },
+      {
+        "text": "2.45\u202fmin",
+        "value": "c"
+      },
+      {
+        "text": "13.72\u202fmin",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "ME = 1.96\u00b7(7/\u221a100)=1.372."
+  },
+  {
+    "id": 18,
+    "text": "Booth\u2011time data: n=12, \u0305x=7.8\u202fmin, \u03bc0=7\u202fmin, s=0.9\u202fmin.  Compute the t\u00a0statistic.",
+    "topic_short": "t-test",
+    "options": [
+      {
+        "text": "t=0.89",
+        "value": "a"
+      },
+      {
+        "text": "t=1.67",
+        "value": "b"
+      },
+      {
+        "text": "t=2.67",
+        "value": "c"
+      },
+      {
+        "text": "t=3.08",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "d",
+    "explanation": "t = (7.8 - 7) / (0.9 / \u221a12) \u2248 3.08."
+  },
+  {
+    "id": 19,
+    "text": "A paired study records n=18 differences.  What are the degrees of freedom for the associated t\u00a0test?",
+    "topic_short": "paired",
+    "options": [
+      {
+        "text": "17",
+        "value": "a"
+      },
+      {
+        "text": "18",
+        "value": "b"
+      },
+      {
+        "text": "34",
+        "value": "c"
+      },
+      {
+        "text": "36",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "df = n\u20111 for paired mean differences."
+  },
+  {
+    "id": 20,
+    "text": "Compute the approximate SE of \u0305X_1-\u0305X_2 for small samples: n1=15, s1=4; n2=12, s2=5.",
+    "topic_short": "welch",
+    "options": [
+      {
+        "text": "1.44",
+        "value": "a"
+      },
+      {
+        "text": "1.77",
+        "value": "b"
+      },
+      {
+        "text": "2.12",
+        "value": "c"
+      },
+      {
+        "text": "2.56",
+        "value": "d"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "SE = \u221a(4^2/15 + 5^2/12) \u2248 1.77."
+  }
+]
