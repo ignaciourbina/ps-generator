@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\begin{document}
+\section*{Problem Set}
+\begin{enumerate}
+{% for q in questions %}
+  \item {{ q.text }}
+  \begin{enumerate}[a)]
+    {% for opt in q.options %}
+    \item {{ opt.text }}
+    {% endfor %}
+  \end{enumerate}
+{% endfor %}
+\end{enumerate}
+\end{document}

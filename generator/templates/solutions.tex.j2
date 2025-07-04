@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\begin{document}
+\section*{Solutions}
+\begin{enumerate}
+{% for q in questions %}
+  \item {{ q.text }}\\
+  Correct answer: {{ q.correctAnswer | upper }}\\
+  {{ q.explanation }}
+{% endfor %}
+\end{enumerate}
+\end{document}
