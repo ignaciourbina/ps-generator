@@ -1,7 +1,7 @@
 # Problem Set 3 Answer Audit
 
 This document records a question-by-question validation of the answers in
-`problem_set_3/problem_set_blueprint.md`. Conceptual and interpretation
+`problem-set-3/problem_set_blueprint.md`. Conceptual and interpretation
 items are confirmed using direct quotations from the slide index. Numerical
 items are verified by running `validate_problemset3_computations.py` and by
 separate manual calculations.
