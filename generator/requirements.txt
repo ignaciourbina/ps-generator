@@ -1,0 +1,4 @@
+# Python packages required for PDF build pipeline
+jinja2>=3.1
+
+# System requirement: a LaTeX distribution providing `pdflatex`
