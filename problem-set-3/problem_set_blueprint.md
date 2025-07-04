@@ -304,12 +304,12 @@ Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audienc
       "stem": "Group 1: n=200, \u0302p_1=0.40; Group 2: n=250, \u0302p_2=0.32.  Compute the standard error of \u0302p_1-\u0302p_2 (rounded to 3 dp).",
       "choices": {
         "A": "0.043",
-        "B": "0.049",
+        "B": "0.046",
         "C": "0.061",
         "D": "0.073"
       },
       "answer": "B",
-      "rationale": "SE = sqrt[p1(1-p1)/n1 + p2(1-p2)/n2] ≈ 0.0487 → 0.049."
+      "rationale": "SE = sqrt[p1(1-p1)/n1 + p2(1-p2)/n2] ≈ 0.0455 → 0.046."
     }
     ```
 
@@ -323,13 +323,13 @@ Balanced mix: **7 Conceptual · 6 Interpretation · 7 Computation**.  Audienc
       "tags": ["pooled", "z-test"],
       "stem": "Two samples yield x1=60 of 200, x2=55 of 180 successes.  Compute the pooled proportion \u0302p used in the z test for H0: p1=p2.",
       "choices": {
-        "A": "0.308",
+        "A": "0.303",
         "B": "0.315",
         "C": "0.333",
         "D": "0.645"
       },
       "answer": "A",
-      "rationale": "\u0302p = (60 + 55) / (200 + 180) = 115 / 380 \u2248 0.303; closest option is 0.308 (choice A)."
+      "rationale": "\u0302p = (60 + 55) / (200 + 180) = 115 / 380 \u2248 0.303; choice A now reflects this rounded value."
     }
     ```
 

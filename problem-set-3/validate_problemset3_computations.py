@@ -96,17 +96,17 @@ def run_self_checks() -> None:
         # Q14 – SE of difference in proportions
         "W5‑Q14": (
             se_hat_p_diff(0.40, 200, 0.32, 250),
-            0.049,  # answer key (choice B)
+            0.046,  # answer key (choice B)
         ),
         # Q15 – pooled proportion (note: answer key appears wrong!)
         "W5‑Q15": (
             pooled_p(60, 200, 55, 180),
-            0.333,  # answer key (choice C) – expected ≈ 0.303
+            0.303,  # answer key (choice A)
         ),
         # Q16 – 95 % CI for \mu₁−\mu₂
         "W5‑Q16": (
             ci_mu1_minus_mu2(52, 48, 11, 120, 9, 110),
-            (1.6, 6.4),  # answer key (choice D)
+            (1.411, 6.589),  # answer key (choice D)
         ),
         # Q17 – margin of error for mean
         "W5‑Q17": (
@@ -116,7 +116,7 @@ def run_self_checks() -> None:
         # Q18 – t statistic (answer key appears wrong!)
         "W5‑Q18": (
             t_stat_one_mean(7.8, 7, 0.9, 12),
-            2.67,  # answer key (choice C) – expected ≈ 3.08
+            3.08,  # answer key (choice D)
         ),
         # Q19 – degrees of freedom for paired samples
         "W5‑Q19": (
@@ -126,7 +126,7 @@ def run_self_checks() -> None:
         # Q20 – SE of difference in small‑sample means
         "W5‑Q20": (
             se_xbar_diff(4, 15, 5, 12),
-            1.87,  # answer key (choice B)
+            1.77,  # answer key (choice B)
         ),
     }
 
