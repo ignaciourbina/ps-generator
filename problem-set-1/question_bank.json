@@ -347,6 +347,6 @@
       }
     ],
     "correctAnswer": "a",
-    "explanation": "Let A be age 18-25, A_c be older. Let S be uses SociConnect. \\( \\displaystyle \\scriptsize  P(A) = 0.30\\), so \\( \\displaystyle \\scriptsize  P(A_c) = 0.70\\). \\( \\displaystyle \\scriptsize  P(S|A) = 0.60\\), \\( \\displaystyle \\scriptsize  P(S|A_c) = 0.40\\). First, find \\( \\displaystyle \\scriptsize  P(S)\\) using total probability: \\( \\displaystyle \\scriptsize  P(S) = P(S|A)P(A) + P(S|A_c)P(A_c) = (0.60)(0.30) + (0.40)(0.70) = 0.18 + 0.28 = 0.46\\). Now, find \\( \\displaystyle \\scriptsize  P(A|S) = [P(S|A)P(A)] / P(S) = 0.18 / 0.46 \\approx 0.3913\\)."
+    "explanation": "Let A be age 18-25, $A_c$ be older. Let S be uses SociConnect. \\( \\displaystyle \\scriptsize  P(A) = 0.30\\), so \\( \\displaystyle \\scriptsize  P(A_c) = 0.70\\). \\( \\displaystyle \\scriptsize  P(S|A) = 0.60\\), \\( \\displaystyle \\scriptsize  P(S|A_c) = 0.40\\). First, find \\( \\displaystyle \\scriptsize  P(S)\\) using total probability: \\( \\displaystyle \\scriptsize  P(S) = P(S|A)P(A) + P(S|A_c)P(A_c) = (0.60)(0.30) + (0.40)(0.70) = 0.18 + 0.28 = 0.46\\). Now, find \\( \\displaystyle \\scriptsize  P(A|S) = [P(S|A)P(A)] / P(S) = 0.18 / 0.46 \\approx 0.3913\\)."
   }
 ]
