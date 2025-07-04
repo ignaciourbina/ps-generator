@@ -9,7 +9,7 @@ published in *problem_set_blueprint.md*.
 
 Example
 -------
-$ python validate_week5_computations.py
+$ python validate_problemset3_computations.py
 W5‑Q14: PASS
 W5‑Q15: **FAIL** (expected ≈ 0.333, got 0.3026)  ← highlights a key error
 ...
