@@ -17,7 +17,9 @@ W5‑Q15: **FAIL** (expected ≈ 0.333, got 0.3026)  ← highlights a key error
 from __future__ import annotations
 
 import math
-from typing import Tuple, Dict, Union
+from typing import Dict, Tuple, Union, Optional
+
+from scipy import stats
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Custom statistical helpers (notation ≈ slides)
@@ -74,6 +76,113 @@ def t_stat_one_mean(xbar: float, mu0: float, s: float, n: int) -> float:
 def df_paired(n: int) -> int:
     """Degrees of freedom for paired‑sample t procedures (Lecture 12, slide 17)."""
     return n - 1
+
+
+def margin_of_error(se: float, critical: float) -> float:
+    """Generic margin of error ME = critical × SE (Lecture 11, slide 6)."""
+    return critical * se
+
+
+def ci_two_proportions(
+    p1_hat: float, n1: int, p2_hat: float, n2: int, z: float = 1.96
+) -> Tuple[float, float]:
+    r"""Large‑sample CI for p₁ − p₂ (Lecture 9, slide 15)."""
+    diff = p1_hat - p2_hat
+    se = se_hat_p_diff(p1_hat, n1, p2_hat, n2)
+    me = z * se
+    return diff - me, diff + me
+
+
+def z_stat_two_props(
+    x1: int, n1: int, x2: int, n2: int, delta0: float = 0.0
+) -> float:
+    """Z statistic for H0 : p₁ − p₂ = Δ₀ (Lecture 9, slide 26)."""
+    p_pool = pooled_p(x1, n1, x2, n2)
+    se0 = math.sqrt(p_pool * (1 - p_pool) * (1 / n1 + 1 / n2))
+    diff_hat = x1 / n1 - x2 / n2
+    return (diff_hat - delta0) / se0
+
+
+def z_stat_one_mean(xbar: float, mu0: float, s: float, n: int) -> float:
+    """Large‑sample Z statistic for one mean (Lecture 11, slide 4)."""
+    return (xbar - mu0) / (s / math.sqrt(n))
+
+
+def z_stat_two_means(
+    mean1: float,
+    mean2: float,
+    s1: float,
+    n1: int,
+    s2: float,
+    n2: int,
+    delta0: float = 0.0,
+) -> float:
+    r"""Large‑sample Z for \mu₁ − \mu₂ = Δ₀ (Lecture 11, slide 22)."""
+    diff = mean1 - mean2
+    se = se_xbar_diff(s1, n1, s2, n2)
+    return (diff - delta0) / se
+
+
+def pooled_sd(s1: float, n1: int, s2: float, n2: int) -> float:
+    """Pooled standard deviation (Lecture 12, slide 26)."""
+    numer = (n1 - 1) * s1 ** 2 + (n2 - 1) * s2 ** 2
+    return math.sqrt(numer / (n1 + n2 - 2))
+
+
+def welch_df(s1: float, n1: int, s2: float, n2: int) -> float:
+    """Welch–Satterthwaite df approximation (Lecture 12, slide 27)."""
+    v1 = s1 ** 2 / n1
+    v2 = s2 ** 2 / n2
+    return (v1 + v2) ** 2 / ((v1 ** 2) / (n1 - 1) + (v2 ** 2) / (n2 - 1))
+
+
+def t_stat_two_means(
+    mean1: float,
+    mean2: float,
+    s1: float,
+    n1: int,
+    s2: float,
+    n2: int,
+    delta0: float = 0.0,
+    pooled: bool = False,
+) -> float:
+    """Student‑t statistic for two means (Lecture 12).
+
+    If ``pooled`` is ``True`` use the pooled SD; otherwise use Welch's SE.
+    """
+    diff = mean1 - mean2
+    if pooled:
+        sp = pooled_sd(s1, n1, s2, n2)
+        se = sp * math.sqrt(1 / n1 + 1 / n2)
+    else:
+        se = math.sqrt(s1 ** 2 / n1 + s2 ** 2 / n2)
+    return (diff - delta0) / se
+
+
+def t_stat_paired(dbar: float, s_d: float, n: int, mu0: float = 0.0) -> float:
+    """Paired‑sample t statistic (Lecture 12, slide 18)."""
+    return (dbar - mu0) / (s_d / math.sqrt(n))
+
+
+def p_value(stat: float, tails: int = 2, df: Optional[int] = None) -> float:
+    """Return the p‑value for a Z or t statistic.
+
+    Parameters
+    ----------
+    stat:
+        Observed z or t statistic.
+    tails:
+        1 for one‑tailed, 2 for two‑tailed tests.
+    df:
+        Degrees of freedom if ``stat`` follows a t distribution.  ``None`` ⇒
+        use the standard normal.
+    """
+    if df is None:
+        dist = stats.norm()
+    else:
+        dist = stats.t(df)
+    prob = dist.sf(abs(stat))
+    return prob * tails
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Quick‑and‑dirty unit tests against the published answer key
