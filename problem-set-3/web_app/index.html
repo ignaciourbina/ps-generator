@@ -1,14 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Week 5 Quiz (Coming Soon)</title>
-  </head>
-  <body>
-    <!--
-      Quiz placeholder.
-      The final questions will be injected from question_bank.json
-      once problem_set_blueprint.md is converted.
-    -->
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Sample Inference Problem Set</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- MathJax Configuration -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']], // Defines inline math delimiters
+                displayMath: [['\\[', '\\]']]  // Defines display math delimiters
+            },
+            chtml: {
+                linebreaks: {
+                    automatic: true, // Enable automatic line breaking
+                    inline: true    // Allow inline math to break
+                },
+                matchFontHeight: true,
+                scale: 1,
+            },
+            startup: {
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async=""></script>
+
+    <style>
+        /* Custom styles for better mobile experience and aesthetics */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .question-option-label {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            /* 12px */
+            border-width: 1px;
+            border-radius: 0.5rem;
+            /* 8px */
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            border-color: #e5e7eb;
+            /* gray-200 */
+        }
+
+        .question-option-label:hover {
+            background-color: #f9fafb;
+            /* gray-50 */
+        }
+        
+        .feedback-correct {
+            border-left: 4px solid #10b981;
+            /* green-500 */
+            background-color: #f0fdf4;
+            /* green-50 */
+        }
+
+        .feedback-incorrect {
+            border-left: 4px solid #ef4444;
+            /* red-500 */
+            background-color: #fef2f2;
+            /* red-50 */
+        }
+
+        .feedback-explanation {
+            background-color: #f3f4f6;
+            /* gray-100 */
+            border: 1px solid #e5e7eb;
+            /* gray-200 */
+            border-radius: 0.375rem;
+            /* 6px */
+            padding: 0.75rem;
+            /* 12px */
+            margin-top: 0.75rem;
+            /* 12px */
+            font-size: 0.875rem;
+            /* 14px */
+            color: #4b5563;
+            /* gray-600 */
+        }
+        
+        /* Ensure MathJax content reflows properly */
+        mjx-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 min-h-screen p-4 sm:p-8">
+    <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-2xl">
+        <header class="mb-6 sm:mb-8 text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold text-indigo-700">Two-Sample Inference Self-Assessment</h1>
+            <p class="text-gray-600 mt-2 text-sm sm:text-base">Test your understanding of inference for two proportions and two means under both large- and small-sample scenarios. Select an answer for each question and submit at the end for feedback.</p>
+        </header>
+
+        <div id="quiz-area">
+            <div id="question-container" class="mb-6">
+                <!-- Question will be loaded here -->
+            </div>
+            <div id="navigation-controls" class="flex justify-between items-center">
+                <!-- Navigation buttons will be here -->
+            </div>
+        </div>
+
+        <div id="results-container" class="hidden">
+            <!-- Results will be loaded here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

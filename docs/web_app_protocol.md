@@ -48,4 +48,19 @@ Because all data comes from `question_bank.json`, the same `script.js` works acr
 5. Place any lecture PDFs in `lecture-slides/` for reference.
 6. Commit the new directory. The app will run entirely from these files—no external dependencies beyond MathJax and Tailwind CDN links in `index.html`.
 
+## Converting Blueprint Markdown
+
+When instructors provide a Markdown blueprint containing JSON question objects (as in `problem-set-3/problem_set_blueprint.md`), run a small parser to transform the blocks into `question_bank.json`.
+
+1. Extract each fenced `jsonc` code block.
+2. Convert the blueprint keys to the minimal bank schema:
+   - `stem` → `text`
+   - first tag from `tags` → `topic_short`
+   - `choices` → array of `{text, value}` with values `a`–`d`
+   - `answer` → `correctAnswer` (lower‑cased)
+   - `rationale` → `explanation`
+3. Number the items sequentially as the `id` field.
+
+The helper script `problem-set-3/parse_blueprint.py` demonstrates this process for Week 5 and writes `question_bank.json` in the same folder.
+
 Following this protocol ensures each problem set is independent and can be zipped or hosted individually. Future enhancements, such as additional metadata fields or styling changes, can be incorporated without breaking existing sets as long as the core JSON structure remains an array of question objects with the fields listed above.
