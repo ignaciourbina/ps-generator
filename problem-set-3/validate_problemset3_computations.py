@@ -1,18 +1,19 @@
 # validate_problemset3_computations
 """Validation helpers and quick self‑tests for the Week 5 computational MCQs.
 
-Each helper mirrors the *exact* notation presented in the lecture slides so that
-instructors and students can trace code ↔ formula one‑to‑one.
-
-Run the module as a script to execute built‑in checks against the answer key
-published in *problem_set_blueprint.md*.
+All statistical routines are imported from :mod:`tools.validation_utils` so the
+code matches the lecture notation.  Execute this script from the repository
+root (``PYTHONPATH=.``) to check the published answers in
+``problem_set_blueprint.md``.
 
 Example
 -------
-$ python validate_problemset3_computations.py
-W5‑Q14: PASS
-W5‑Q15: **FAIL** (expected ≈ 0.333, got 0.3026)  ← highlights a key error
+```bash
+PYTHONPATH=. python problem-set-3/validate_problemset3_computations.py
+W5-Q14: PASS
+W5-Q15: **FAIL** (expected ≈ 0.333, got 0.3026)  # highlights a key error
 ...
+```
 """
 from __future__ import annotations
 
@@ -38,7 +39,7 @@ from tools.validation_utils import (
 )
 
 # ───────────────────────────────────────────────────────────────────────────────
-# Custom statistical helpers (notation ≈ slides)
+# Imported statistical helpers (notation ≈ slides)
 # ───────────────────────────────────────────────────────────────────────────────
 
 
