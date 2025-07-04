@@ -19,7 +19,7 @@ backed by JSON question banks, with a roadmap toward automated PDF generation.
 | `problem-set-3/`      | In-progress content: blueprint of 20 MCQs and validation utilities.                   |
 | `doc/`                | Internal documentation (`audit_ps1_ps2.md`, `schema.md`).                             |
 | `tools/`              | Helper scripts such as `extract_questions.py`.                                        |
-| `tests/`              | Unit tests ensuring JSON files parse correctly.                                       |
+| `tests/`              | Unit tests ensuring JSON files parse correctly and validate generated TeX.                                       |
 | `Refactor_Roadmap.md` | Milestone plan for moving from the prototype to a full generator pipeline.           |
 | `LICENSE`             | MIT license covering all source files.                                                |
 
@@ -53,6 +53,12 @@ pytest -q
 ```
 
 HTML can be validated with `tidy` and formatted with `prettier` if available.
+
+Generate TeX versions of a problem set using the CLI:
+
+```bash
+python -m generator.build_ps --bank problem-set-N/question_bank.json --out build/
+```
 
 ## 5 · Roadmap
 
