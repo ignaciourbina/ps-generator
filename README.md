@@ -60,6 +60,12 @@ Generate TeX versions of a problem set using the CLI:
 python -m generator.build_ps --bank problem-set-N/question_bank.json --out build/
 ```
 
+You can also compile the resulting TeX into PDFs in one step:
+
+```bash
+python -m generator.build_pdf --bank problem-set-N/question_bank.json --out build/
+```
+
 ## 5 · Roadmap
 
 `Refactor_Roadmap.md` describes the planned evolution of the project. Upcoming
