@@ -5,7 +5,7 @@ Each helper mirrors the *exact* notation presented in the lecture slides so that
 instructors and students can trace code ↔ formula one‑to‑one.
 
 Run the module as a script to execute built‑in checks against the answer key
-published in *Week5‑Question‑Blueprint.md*.
+published in *problem_set_blueprint.md*.
 
 Example
 -------
@@ -59,7 +59,7 @@ def ci_mu1_minus_mu2(
     n2: int,
     z: float = 1.96,
 ) -> Tuple[float, float]:
-    """Large‑sample CI for \mu₁ − \mu₂ (Lecture 11, slide 12)."""
+    r"""Large‑sample CI for \mu_1 - \mu_2 (Lecture 11, slide 12)."""
     diff = mean1 - mean2
     se = se_xbar_diff(s1, n1, s2, n2)
     me = z * se
@@ -67,7 +67,7 @@ def ci_mu1_minus_mu2(
 
 
 def t_stat_one_mean(xbar: float, mu0: float, s: float, n: int) -> float:
-    """Student‑t statistic for H0 : \mu = \mu₀ (Lecture 12, slide 7)."""
+    r"""Student-t statistic for H0 : \mu = \mu_0 (Lecture 12, slide 7)."""
     return (xbar - mu0) / (s / math.sqrt(n))
 
 
@@ -82,7 +82,7 @@ def df_paired(n: int) -> int:
 Answer = Union[float, Tuple[float, float]]
 
 
-def approx(a: Answer, b: Answer, tol: float = 5e‑3) -> bool:  # noqa: W605
+def approx(a: Answer, b: Answer, tol: float = 5e-3) -> bool:  # noqa: W605
     """Flexible tolerance‑based comparison (scalar or 2‑tuple)."""
     if isinstance(a, tuple):
         return all(abs(x - y) <= tol for x, y in zip(a, b))
@@ -135,7 +135,7 @@ def run_self_checks() -> None:
         status = "PASS" if ok else "FAIL"
         print(f"{qid}: {status}")
         if not ok:
-            print(f"  expected ≈ {key}, got {calc:.4f}")
+            print(f"  expected ≈ {key}, got {calc}")
 
 
 if __name__ == "__main__":
